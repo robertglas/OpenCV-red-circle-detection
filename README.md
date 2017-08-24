@@ -6,3 +6,6 @@ Here you could find the code for **Detect red circles in an image using OpenCV**
 https://solarianprogrammer.com/2015/05/08/detect-red-circles-image-using-opencv/
 
 Copyright 2015 Sol from www.solarianprogrammer.com
+
+
+2017 ported to Python and CV2.
