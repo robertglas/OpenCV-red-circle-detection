@@ -50,9 +50,9 @@ circles = cv2.HoughCircles(red_hue_image, cv2.HOUGH_GRADIENT, 1, red_hue_image.s
 if circles is None or len(circles) == 0:
     print('No circles were found! Exiting.')
     exit()
-for current_circle in circles:
-    center = (int(round(current_circle[0][0])), int(round(current_circle[0][1])))
-    radius = int(round(current_circle[0][2]))
+for current_circle in circles[0,:]:
+    center = (int(current_circle[0]), int(current_circle[1]))
+    radius = int(current_circle[2])
     cv2.circle(orig_image, center, radius, (0, 255, 0), 5)
 
 # Show images
@@ -64,5 +64,6 @@ cv2.namedWindow("Combined threshold images", cv2.WINDOW_AUTOSIZE)
 cv2.imshow("Combined threshold images", red_hue_image)
 cv2.namedWindow("Detected red circles on the input image", cv2.WINDOW_AUTOSIZE)
 cv2.imshow("Detected red circles on the input image", orig_image)
+print('Now showing the results in openCV windows. Press any key to exit.')
 
 cv2.waitKey(0)
